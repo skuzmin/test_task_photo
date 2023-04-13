@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --main-color-bg: rgb(151, 166, 203);
+  --navbar-color-bg: #003b4d;
+  --text-light-color: #e9e6e6;
+  --text-dark-color: #181818;
+  --basic-transparent: transparent;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  box-sizing: border-box;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html, body { 
+  height: 100%;
+  font-size: 16px;
+  background-color: var(--main-color-bg);
+}
+
+.container-main {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}

@@ -1,0 +1,33 @@
+:host {
+  display: block;
+}
+
+.app-navbar {
+  max-height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 24px 64px;
+  background-color: var(--navbar-color-bg);
+  .wrapper {
+    justify-content: space-around;
+  }
+  .navigation-link {
+    padding: 12px 24px;
+    color: var(--text-light-color);
+    border-radius: 4px;
+    border: 1px solid var(--text-light-color);
+    background-color: var(--basic-transparent);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+    &:hover {
+      border-color: var(--basic-transparent);
+    }
+    &:active, &.active-link {
+      background-color: var(--text-light-color);
+      color: var(--text-dark-color);
+    }
+  }
+}
