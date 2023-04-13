@@ -1,0 +1,19 @@
+:host {
+  height: 100%;
+  width: 100%;
+}
+
+.app-photos {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(64px, auto);
+  grid-gap: 24px;
+  background-color: var(--photos-color-bg);
+  padding: 12px;
+  .photo-item {
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+}
