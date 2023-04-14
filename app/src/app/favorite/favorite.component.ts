@@ -8,6 +8,7 @@ import { AppRoutes } from '../shared/constants';
 @Component({
   selector: 'app-favorite',
   templateUrl: './favorite.component.html',
+  styleUrls: ['./favorite.component.scss']
 })
 export class FavoriteComponent implements OnInit {
   public photos: Array<Photo>;

@@ -1,1 +1,4 @@
-<app-gallery [photos]="photos" (selectPhoto)="goToPhoto($event)"></app-gallery>
+<div class="app-favorite">
+  <app-gallery *ngIf="photos.length" [photos]="photos" (selectPhoto)="goToPhoto($event)"></app-gallery>
+  <div class="no-photos" *ngIf="!photos.length">You don't have favorite photos yet!</div>
+</div>

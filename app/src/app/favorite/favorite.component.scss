@@ -1,0 +1,13 @@
+:host {
+  width: 100%;
+}
+
+.app-favorite {
+  .no-photos {
+    padding: 64px;
+    text-align: center;
+    font-size: 48px;
+    background-color: var(--photos-color-bg);
+    border-radius: 8px;
+  }
+}
