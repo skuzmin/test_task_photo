@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 
 import { PHOTOS } from '../constants';
+import { Photo } from 'src/app/shared/models';
 
 @Injectable()
 export class FavoriteService {
-  private photos: Array<string>;
+  private photos: Array<Photo>;
   constructor() {
     this.initPhotos();
   }
@@ -18,21 +19,21 @@ export class FavoriteService {
     }
   }
 
-  getPhotos(): Array<string> {
+  getPhotos(): Array<Photo> {
     return this.photos;
   }
 
-  savePhoto(url: string): void {
-    this.photos.push(url);
+  savePhoto(photo: Photo): void {
+    this.photos.push(photo);
     localStorage.setItem(PHOTOS, JSON.stringify(this.photos));
   }
 
-  removePhoto(url: string): void {
-    this.photos = this.photos.filter((p: string) => p === url);
+  removePhoto(photo: Photo): void {
+    this.photos = this.photos.filter((p: Photo) => p.id === photo.id);
     localStorage.setItem(PHOTOS, JSON.stringify(this.photos));
   }
 
-  isPhotoExist(url: string): boolean {
-    return this.photos.some((p: string) => p === url);
+  isPhotoExist(photo: Photo): boolean {
+    return this.photos.some((p: Photo) => p.id === photo.id);
   }
 }

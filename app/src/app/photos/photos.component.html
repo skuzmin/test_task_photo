@@ -1,6 +1,6 @@
 <div class="app-photos">
-  <button class="photo-item" *ngFor="let photo of photos" (click)="addToFavorites(photo.url)">
-    <img [src]="photo.url" alt="photo" />
+  <button class="photo-item" *ngFor="let photo of photos" (click)="addToFavorites(photo)">
+    <img class="img" [src]="photo.url" alt="photo" />
+    <div class="veil">Add to Favorites</div>
   </button>
-
 </div>
