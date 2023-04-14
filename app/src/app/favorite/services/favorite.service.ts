@@ -11,12 +11,8 @@ export class FavoriteService {
   }
 
   initPhotos(): void {
-    try {
-      const data = JSON.parse(localStorage.getItem(PHOTOS)!);
-      this.photos = data || [];
-    } catch (e: unknown) {
-      this.photos = [];
-    }
+    const data = JSON.parse(localStorage.getItem(PHOTOS)!);
+    this.photos = data || [];
   }
 
   getPhotos(): Array<Photo> {

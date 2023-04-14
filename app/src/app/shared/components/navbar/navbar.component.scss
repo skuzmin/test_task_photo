@@ -30,5 +30,8 @@
       background-color: var(--text-light-color);
       color: var(--text-dark-color);
     }
+    &.active-link {
+      cursor: default;
+    }
   }
 }

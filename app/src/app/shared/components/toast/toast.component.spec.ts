@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatIconTestingModule } from '@angular/material/icon/testing';
 
 import { SharedModule } from '../../shared.module';
 import { ToastComponent } from './toast.component';
+import { MAT_SNACK_BAR_DATA, MatSnackBarRef } from '@angular/material/snack-bar';
 
 describe('ToastComponent', () => {
   let component: ToastComponent;
@@ -11,8 +11,11 @@ describe('ToastComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ToastComponent],
       imports: [
-        MatIconTestingModule,
         SharedModule
+      ],
+      providers: [
+        { provide: MAT_SNACK_BAR_DATA, useValue: { type: 'error', text: 'error' } },
+        { provide: MatSnackBarRef<ToastComponent>, useValue: { dismiss: () => { } } }
       ]
     }).compileComponents();
   });
