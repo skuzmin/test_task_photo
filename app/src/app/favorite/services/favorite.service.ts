@@ -23,6 +23,10 @@ export class FavoriteService {
     return this.photos;
   }
 
+  getPhotoById(id: string): Photo {
+    return this.photos.find((p: Photo) => p.id === id);
+  }
+
   savePhoto(photo: Photo): void {
     this.photos.push(photo);
     localStorage.setItem(PHOTOS, JSON.stringify(this.photos));

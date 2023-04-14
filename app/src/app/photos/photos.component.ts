@@ -7,8 +7,7 @@ import { Photo } from '../shared/models';
 
 @Component({
   selector: 'app-photos',
-  templateUrl: './photos.component.html',
-  styleUrls: ['./photos.component.scss']
+  templateUrl: './photos.component.html'
 })
 export class PhotosComponent implements OnInit {
   public photos: Array<Photo>;
@@ -43,6 +42,4 @@ export class PhotosComponent implements OnInit {
       this.getPhotos();
     }
   }
-
-
 }

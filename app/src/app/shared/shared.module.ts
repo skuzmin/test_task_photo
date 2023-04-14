@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { NavbarComponent } from './navbar/navbar.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 @NgModule({
   imports: [
@@ -18,9 +19,10 @@ import { NavbarComponent } from './navbar/navbar.component';
     BrowserModule,
     HttpClientModule,
     RouterModule,
-    NavbarComponent
+    NavbarComponent,
+    GalleryComponent
   ],
-  declarations: [NavbarComponent],
+  declarations: [NavbarComponent, GalleryComponent],
   providers: [],
 })
 export class SharedModule { }
