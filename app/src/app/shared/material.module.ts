@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 const COMPONENTS = [
-  MatSnackBarModule,
-  MatProgressSpinnerModule
-]
+  MatDialogModule,
+  MatProgressSpinnerModule,
+  MatSnackBarModule
+];
 
 @NgModule({
   imports: COMPONENTS,

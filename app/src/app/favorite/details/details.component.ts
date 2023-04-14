@@ -6,6 +6,9 @@ import { FavoriteService } from '../services';
 import { ToastService } from 'src/app/shared/components/toast/toast.service';
 import { ToastTypes } from 'src/app/shared/components/toast/toast.constant';
 import { AppRoutes } from 'src/app/shared/constants';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmationDialogComponent } from 'src/app/shared/components/confirmation-dialog/confirmation-dialog.component';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-details',
@@ -17,6 +20,7 @@ export class DetailsComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute,
     private favoriteService: FavoriteService,
     private toastService: ToastService,
+    private dialog: MatDialog,
     private router: Router) { }
 
   ngOnInit(): void {
@@ -24,8 +28,17 @@ export class DetailsComponent implements OnInit {
   }
 
   remove(photo: Photo): void {
-    this.favoriteService.removePhoto(photo);
-    this.toastService.showNotification({ type: ToastTypes.Success, text: 'Photo has been successfully removed!' });
-    this.router.navigate([AppRoutes.Favorites]);
+    this.dialog.open(ConfirmationDialogComponent, {
+      data: {
+        text: 'Are you sure want to remove this photo from Favorites ?'
+      }
+    }).afterClosed()
+      .pipe(filter(Boolean))
+      .subscribe(() => {
+        this.favoriteService.removePhoto(photo);
+        this.toastService.showNotification({ type: ToastTypes.Success, text: 'Photo has been successfully removed!' });
+        this.router.navigate([AppRoutes.Favorites]);
+      });
+
   }
 }

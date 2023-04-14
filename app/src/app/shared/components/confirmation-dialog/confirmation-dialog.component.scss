@@ -1,0 +1,40 @@
+.app-confirmation-dialog {
+  padding: 12px;
+  .text {
+    padding: 24px 0;
+  }
+  .button-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+  }
+  .btn {
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--basic-transparent);
+    color: var(--text-dark-color);
+    padding: 12px 16px;
+    transition: all 0.3s ease-in-out;
+    &.btn-cancel {
+      border: 1px solid var(--text-dark-color);
+      &:hover {
+        border-color: var(--basic-transparent);
+      }
+      &:active {
+        border: 1px solid var(--text-dark-color);
+      }
+    }
+    &.btn-remove {
+      background-color: var(--danger-color);
+      color: var(--text-light-color);
+      &:hover {
+        opacity: 0.7;
+      }
+      &:active {
+        opacity: 1;
+      }
+    }
+  }
+}

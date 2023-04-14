@@ -9,6 +9,7 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { ToastService } from './components/toast/toast.service';
 import { ToastComponent } from './components/toast/toast.component';
 import { MaterialModule } from './material.module';
+import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
   imports: [
@@ -25,9 +26,10 @@ import { MaterialModule } from './material.module';
     RouterModule,
     NavbarComponent,
     MaterialModule,
+    ConfirmationDialogComponent,
     GalleryComponent
   ],
-  declarations: [NavbarComponent, GalleryComponent, ToastComponent],
+  declarations: [NavbarComponent, GalleryComponent, ToastComponent, ConfirmationDialogComponent],
   providers: [ToastService]
 })
 export class SharedModule { }
