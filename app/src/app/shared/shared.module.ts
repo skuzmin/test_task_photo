@@ -4,14 +4,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
-import { NavbarComponent } from './navbar/navbar.component';
-import { GalleryComponent } from './gallery/gallery.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
+import { ToastService } from './components/toast/toast.service';
+import { ToastComponent } from './components/toast/toast.component';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   imports: [
     CommonModule,
     BrowserModule,
     HttpClientModule,
+    MaterialModule,
     RouterModule
   ],
   exports: [
@@ -20,9 +24,10 @@ import { GalleryComponent } from './gallery/gallery.component';
     HttpClientModule,
     RouterModule,
     NavbarComponent,
+    MaterialModule,
     GalleryComponent
   ],
-  declarations: [NavbarComponent, GalleryComponent],
-  providers: [],
+  declarations: [NavbarComponent, GalleryComponent, ToastComponent],
+  providers: [ToastService]
 })
 export class SharedModule { }

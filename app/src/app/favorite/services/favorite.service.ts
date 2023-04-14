@@ -33,7 +33,7 @@ export class FavoriteService {
   }
 
   removePhoto(photo: Photo): void {
-    this.photos = this.photos.filter((p: Photo) => p.id === photo.id);
+    this.photos = this.photos.filter((p: Photo) => p.id !== photo.id);
     localStorage.setItem(PHOTOS, JSON.stringify(this.photos));
   }
 

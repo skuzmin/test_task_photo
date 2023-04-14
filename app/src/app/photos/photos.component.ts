@@ -4,6 +4,8 @@ import { finalize } from 'rxjs';
 import { PhotosService } from './services';
 import { FavoriteService } from '../favorite/services';
 import { Photo } from '../shared/models';
+import { ToastService } from '../shared/components/toast/toast.service';
+import { ToastTypes } from '../shared/components/toast/toast.constant';
 
 @Component({
   selector: 'app-photos',
@@ -12,7 +14,7 @@ import { Photo } from '../shared/models';
 export class PhotosComponent implements OnInit {
   public photos: Array<Photo>;
   public isLoading: boolean;
-  constructor(private photosService: PhotosService, private favoriteService: FavoriteService) { }
+  constructor(private photosService: PhotosService, private favoriteService: FavoriteService, private toastService: ToastService) { }
 
   ngOnInit(): void {
     this.photos = [];
@@ -28,10 +30,10 @@ export class PhotosComponent implements OnInit {
 
   addToFavorites(photo: Photo): void {
     if (this.favoriteService.isPhotoExist(photo)) {
-      console.log('EXIST');
+      this.toastService.showNotification({type: ToastTypes.Error, text: 'This photo has been already added to Favorites'});
     } else {
       this.favoriteService.savePhoto(photo);
-      console.log('SAVED');
+      this.toastService.showNotification({type: ToastTypes.Success, text: 'Photo has been added to Favorites'});
     }
   }
 
