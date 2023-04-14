@@ -1,1 +1,4 @@
-<app-gallery [photos]="photos" (selectPhoto)="addToFavorites($event)" [isOverlayEnabled]="true"></app-gallery>
+<div class="app-photos">
+  <app-gallery *ngIf="photos.length" [photos]="photos" (selectPhoto)="addToFavorites($event)" [isOverlayEnabled]="true"></app-gallery>
+  <mat-spinner class="spinner" *ngIf="isLoading"></mat-spinner>
+</div>

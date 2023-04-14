@@ -9,7 +9,8 @@ import { ToastTypes } from '../shared/components/toast/toast.constant';
 
 @Component({
   selector: 'app-photos',
-  templateUrl: './photos.component.html'
+  templateUrl: './photos.component.html',
+  styleUrls: ['./photos.component.scss']
 })
 export class PhotosComponent implements OnInit {
   public photos: Array<Photo>;
